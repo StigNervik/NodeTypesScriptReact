@@ -86,5 +86,5 @@ Compile and run the server:
 
 ```
 $ yarn tsc
-$ node server.js
+$ yarn start
 ```
