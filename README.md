@@ -1,8 +1,27 @@
-## Node TypeScript React project
+## Node React Template
 
-This project uses Node and React there the Node is written in TypeScript and React in JavaScript.
+This project is a template project that can be used as a starter project if you want to create a node react project.
+Uses Node and React there the Node is written in TypeScript and React in JavaScript.
 
-### Install the node server
+### how to build
+
+Clone the project.
+Go to the client directory and build the client.
+
+```
+$ yarn
+$ yarn build
+```
+
+Go to the server project and build the server.
+
+```
+$ yarn
+$ tsc
+$ yarn start
+```
+
+### Build the server from scratch
 
 Create project file and install TypeScript.
 
@@ -32,7 +51,7 @@ Install Express and Express types:
 $ yarn add express @types/express
 ```
 
-### React client
+### Build the client
 
 A React applicaton which is the frontend of this project.
 React is a JavaScript library for building user interfaces.
@@ -85,6 +104,6 @@ app.listen(port, () => {
 Compile and run the server:
 
 ```
-$ yarn tsc
+$ tsc
 $ yarn start
 ```
