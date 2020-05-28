@@ -32,15 +32,7 @@ Install Express and Express types:
 $ yarn add express @types/express
 ```
 
-Create the server file, compile and run server:
-
-```
-$ touch server.ts
-$ yarn tsc
-$ node server.js
-```
-
-## React client
+### React client
 
 A React applicaton which is the frontend of this project.
 React is a JavaScript library for building user interfaces.
@@ -50,4 +42,49 @@ Using Create React App that is the best way to start building a new single page 
 npx create-react-app client
 cd client
 npm start
+```
+
+### Map backend to frontend
+
+Create the server file, compile and run server:
+
+```
+$ touch server.ts
+```
+
+server.ts
+
+```
+
+import express = require('express');
+import path = require('path');
+
+const app: express.Application = express();
+
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, '/../client/build')));
+
+app.get('/test', (req, res) => {
+  res.send('Node Express server running.');
+});
+
+// Handles any requests that don't match the ones above
+app.get('*', (req, res) => {
+  console.log('Current dir: ', __dirname);
+  res.sendFile(path.join(__dirname + '/../client/build/index.html'));
+});
+
+const port = process.env.PORT || 5001;
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
+```
+
+Compile and run the server:
+
+```
+$ yarn tsc
+$ node server.js
 ```
