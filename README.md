@@ -3,7 +3,7 @@
 This project is a template project that can be used as a starter project if you want to create a node react project.
 Uses Node and React there the Node is written in TypeScript and React in JavaScript.
 
-### how to build
+### How to build
 
 Clone the project.
 Go to the client directory and build the client.
